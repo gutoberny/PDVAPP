@@ -3,23 +3,26 @@
 require __DIR__.'/vendor/autoload.php';
 
 use \App\Http\Router;
-use \App\Http\Response;
-use \App\Controller\Pages\Home;
+use \App\Utils\View;
 
-define('URL', 'http://localhost:8080/PDVAPP');
+define('URL', 'http://localhost:8080');
 
+/**
+ * Define the default value of vars
+ */
+View::init([
+    'URL' => URL
+]);
+
+/**
+ * Initiate the Router
+ */
 $obRouter = new Router(URL);
 
-//Home Route
-
-$obRouter->get('/', [
-    function(){
-        return new Response(200, Home::getHome());
-    }
-]);
+include __DIR__.'/routes/pages.php';
 
 /**
  * Print response of route
  */
-$obRouter   ->run()
-            ->sendResponse();
+$obRouter->run()
+         ->sendResponse();

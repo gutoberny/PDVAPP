@@ -14,11 +14,9 @@ class Home extends Page{
 
         $content = View::render('pages/home', [
             'name' => $organization->name,
-            'email' => $organization->email,
-            'description' => $organization->description
         ]);
 
-        return parent::getPage('GbernyPDv', $content);
+        return parent::getPage('Home > GbernyPDv', $content);
     }
 
 }

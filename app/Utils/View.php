@@ -3,7 +3,17 @@
 namespace App\Utils;
 
 class View {
-    
+    /**
+     * Default variable
+     */
+    private static $vars = [];
+
+    /**
+     * Method responsable to define the initial data of that class
+     */
+    public static function init($vars = []) {
+        self::$vars = $vars;
+    }
     /** 
      * Metod responsable to return content of view
      * @param string $view
@@ -24,6 +34,9 @@ class View {
     public static function render($view, $vars = []) {
         //content of view
         $contentView = self::getContentView($view);
+
+        //Merge Vars of View
+        $vars = array_merge(self::$vars, $vars);
 
         $keys = array_keys($vars);
         $keys = array_map(function($item){
