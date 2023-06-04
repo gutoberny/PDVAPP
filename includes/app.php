@@ -4,7 +4,13 @@ require __DIR__.'/../vendor/autoload.php';
 
 use \App\Utils\View;
 use \WilliamCosta\DatabaseManager\Database;
+use \WilliamCosta\DotEnv\Environment;
 
+Environment::load(__DIR__);
+echo "<pre>";
+print_r(getenv('DB_NAME'));
+echo "<pre>"; 
+exit;
 //Define conf db
 Database::config(
     getenv('DB_HOST'),
