@@ -1,23 +1,9 @@
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/includes/app.php';
 
 use \App\Http\Router;
-use \App\Utils\View;
-use \WilliamCosta\DotEnv\Environment;
 
-//Load environment Variables 
-Environment::load(__DIR__);
-
-//Define const URL
-define('URL', getenv('URL'));
-
-/**
- * Define the default value of vars
- */
-View::init([
-    'URL' => URL
-]);
 
 /**
  * Initiate the Router
