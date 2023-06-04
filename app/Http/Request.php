@@ -8,6 +8,8 @@ class Request {
 
     private $uri;
 
+    private $router;
+
     /**
      * Params URL ($_GET)
      */
@@ -23,12 +25,31 @@ class Request {
      */
     private $headers = [];
 
-    public function __construct() {
+    public function __construct($router) {
+        $this->router = $router;
         $this->queryParams  = $_GET ?? [];
         $this->postVars     = $_POST ?? [];
         $this->headers      = getallheaders(); 
         $this->httpMethod   = $_SERVER['REQUEST_METHOD'] ?? '';
+        $this->setUri();
+    }
+
+    /**
+     * Method responsable to define URI
+     */
+    private function setUri(){
         $this->uri          = $_SERVER['REQUEST_URI'] ?? '';
+
+        //remove GETs from URI
+        $xURI = explode('?', $this->uri);
+        $this->uri = $xURI[0];
+    }
+
+    /**
+     * Method responsable to return Router
+     */
+    public function getRouter() {
+        return $this->router;
     }
 
     /**

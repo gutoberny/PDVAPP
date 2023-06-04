@@ -29,7 +29,7 @@ class ProductNew extends Page{
         $obProduct->taxes       = $postVars['taxes'];
         $obProduct->create();
 
-        return self::getProductNew();
+        return Products::getProducts($request);
     }
 
 }

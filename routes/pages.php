@@ -19,8 +19,8 @@ $obRouter->get('/about', [
 
 //Products
 $obRouter->get('/products', [
-    function($idPage){
-        return new Response(200, Pages\Products::getProducts());
+    function($request){
+        return new Response(200, Pages\Products::getProducts($request));
     }
 ]);
 
