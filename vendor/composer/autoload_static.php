@@ -7,10 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInitc5dbde988dffe2828afc5e2b3e684c65
 {
     public static $prefixLengthsPsr4 = array (
-        'W' => 
-        array (
-            'WilliamCosta\\DotEnv\\' => 20,
-        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -18,10 +14,6 @@ class ComposerStaticInitc5dbde988dffe2828afc5e2b3e684c65
     );
 
     public static $prefixDirsPsr4 = array (
-        'WilliamCosta\\DotEnv\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/william-costa/dot-env/src',
-        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',

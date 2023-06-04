@@ -18,8 +18,8 @@ $obRouter->get('/about', [
 ]);
 
 //Dinamic
-$obRouter->get('/page/{idPage}', [
+$obRouter->get('/products', [
     function($idPage){
-        return new Response(200, $idPage);
+        return new Response(200, Pages\Products::getProducts());
     }
 ]);
