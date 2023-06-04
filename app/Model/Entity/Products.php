@@ -2,11 +2,13 @@
 
 namespace App\Model\Entity;
 
+use \WilliamCosta\DatabaseManager\Database;
+
 class Products {
     /**
      * ID product
      */
-    public $id;
+    public $idProduct;
 
     /**
      * Date Time product
@@ -24,12 +26,21 @@ class Products {
     public $price;
 
     /**
-     * Method responsable to insert a instance on database
+     * Price product
      */
-    public function create() {
-       echo "<pre>";
-       print_r($this);
-       echo "<pre>"; 
-       
+    public $taxes;
+
+    /**
+     * Method responsable to get products
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @param string $fields
+     * @return PDOStatement
+     */
+    public static function getProducts($where = null, $order = null, $limit = null, $fields = '*') {
+        return (new Database('products'))->select($where,$order,$limit,$fields);
     }
+
+
 }

@@ -26,6 +26,7 @@ class ProductNew extends Page{
         $obProduct              = new EntityProductNew();
         $obProduct->description = $postVars['description'];
         $obProduct->price       = $postVars['price'];
+        $obProduct->taxes       = $postVars['taxes'];
         $obProduct->create();
 
         return self::getProductNew();

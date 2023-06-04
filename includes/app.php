@@ -6,7 +6,7 @@ use \App\Utils\View;
 use \WilliamCosta\DatabaseManager\Database;
 use \WilliamCosta\DotEnv\Environment;
 
-Environment::load(__DIR__);
+Environment::load(__DIR__.'/../');
 
 //Define conf db
 Database::config(

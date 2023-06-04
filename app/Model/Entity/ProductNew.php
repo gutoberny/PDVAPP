@@ -26,21 +26,23 @@ class ProductNew {
     public $price;
 
     /**
+     * Price product
+     */
+    public $taxes;
+
+    /**
      * Method responsable to insert a instance on database
      */
     public function create() {
         //Define date
         $this->dthrInsert = date('Y-m-d H:i:s');
-       
         $this->id = (new Database('products'))->insert([
             'description' => $this->description,
             'price'       => $this->price,
-            'data'        => $this->dthrInsert
+            'taxes'       => $this->taxes,
+            'dthrInsert'  => $this->dthrInsert
         ]);
-        echo "<pre>";
-        print_r($this);
-        echo "<pre>"; 
-        exit;
 
+        return true;
     }
 }
