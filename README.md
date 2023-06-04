@@ -1,7 +1,7 @@
 # Market Management System
 
 This project is a market management system that allows users to perform various operations related to product management and sales. 
-It provides functionalities such as product registration, type registration, tax percentage registration, itemized sales display, total purchase value calculation, total tax value calculation, and saving of sales records. The system is built using PHP 7.4 or higher and can utilize either PostgreSQL or MSSQL Server as the database backend.
+It provides functionalities such as product registration, type registration, tax percentage registration, itemized sales display, total purchase value calculation, total tax value calculation, and saving of sales records. The system is built using PHP 7.4 or higher and MSSQL Server as the database backend.
 
 ## Features
 - **Product registration**: Users can register new products in the system, providing details such as product name, price, and associated type.
